@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" styleClass="backgroundColor" stylesheets="@css/styling.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="visualisation.VisualisationController">
+   <children>
+      <BorderPane fx:id="currentGraph" layoutX="638.0" layoutY="249.0" prefHeight="309.0" prefWidth="623.0">
+      </BorderPane>
+      <ImageView fitHeight="93.0" fitWidth="220.0" layoutX="120.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo.png" />
+         </image>
+      </ImageView>
+      <Line endX="744.0" layoutX="400.0" layoutY="633.0" startX="-133.33334350585938" stroke="WHITE" strokeWidth="2.0" />
+      <Text fx:id="ngUnpressed" fill="WHITE" layoutX="215.0" layoutY="603.8984375" lineSpacing="5.0" onMouseClicked="#onNgPressed" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="NODE GRAPH" textAlignment="CENTER" visible="false" wrappingWidth="248.99996948242188">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Text fx:id="ramUnpressed" fill="WHITE" layoutX="464.0" layoutY="604.0" lineSpacing="5.0" onMouseClicked="#onRamPressed" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="RAM/CPU" textAlignment="CENTER" wrappingWidth="248.99996948242188">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Text fx:id="statUnpressed" fill="WHITE" layoutX="713.0" layoutY="604.0" lineSpacing="5.0" onMouseClicked="#onStatPressed" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="CENTER" wrappingWidth="248.99996948242188">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Text fx:id="termUnpressed" fill="WHITE" layoutX="962.0" layoutY="604.0" lineSpacing="5.0" onMouseClicked="#onTermPressed" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="TERMINAL" textAlignment="CENTER" wrappingWidth="248.99996948242188">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Text fx:id="ngPressed" fill="#cdf27e" layoutX="215.0" layoutY="603.8984375" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="NODE GRAPH" textAlignment="CENTER" wrappingWidth="248.99996948242188">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="ramPressed" fill="#cdf27e" layoutX="464.0" layoutY="603.8984375" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="RAM/CPU" textAlignment="CENTER" visible="false" wrappingWidth="248.99996948242188">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="statPressed" fill="#cdf27e" layoutX="713.0" layoutY="603.8984375" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="CENTER" visible="false" wrappingWidth="248.99996948242188">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="termPressed" fill="#cdf27e" layoutX="962.0" layoutY="603.8984375" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="TERMINAL" textAlignment="CENTER" visible="false" wrappingWidth="248.99996948242188">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <BorderPane fx:id="ng" layoutX="252.0" layoutY="671.0" prefHeight="333.0" prefWidth="908.0">
+      </BorderPane>
+      <AnchorPane fx:id="ram" layoutX="257.0" layoutY="634.0" prefHeight="385.0" prefWidth="897.0" visible="false">
+         <children>
+            <AreaChart fx:id="ramGraph" layoutX="447.0" layoutY="-5.0" prefHeight="337.0" prefWidth="428.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </AreaChart>
+            <AreaChart fx:id="cpuGraph" layoutX="-25.0" layoutY="-5.0" prefHeight="338.0" prefWidth="446.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </AreaChart>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="stats" layoutX="253.0" layoutY="613.0" prefHeight="385.0" prefWidth="897.0" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="13.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Current best schedule time">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="13.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Time elapsed">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="13.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Branches visited">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="13.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Branches discarded">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="13.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Current tasks completed">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="504.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Output">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="504.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Input">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="504.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Processors">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="504.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Parallelization">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="504.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Cores">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="s6" fill="#cdf27e" layoutX="637.0" layoutY="64.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="RIGHT" wrappingWidth="255.99996948242188">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Text fx:id="s7" fill="#cdf27e" layoutX="603.0" layoutY="112.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="RIGHT" wrappingWidth="287.9999694824219">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Text fx:id="s8" fill="#cdf27e" layoutX="637.0" layoutY="160.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="RIGHT" wrappingWidth="255.99996948242188">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Text fx:id="s9" fill="#cdf27e" layoutX="637.0" layoutY="208.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="RIGHT" wrappingWidth="255.99996948242188">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Text fx:id="s10" fill="#cdf27e" layoutX="637.0" layoutY="256.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="RIGHT" wrappingWidth="255.99996948242188">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Text fx:id="s1" fill="#cdf27e" layoutX="170.0" layoutY="64.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="0 s" textAlignment="RIGHT" wrappingWidth="255.99996948242188">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Text fx:id="s2" fill="#cdf27e" layoutX="170.0" layoutY="112.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="RIGHT" wrappingWidth="255.99996948242188">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Text fx:id="s3" fill="#cdf27e" layoutX="170.0" layoutY="160.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="RIGHT" wrappingWidth="255.99996948242188">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Text fx:id="s4" fill="#cdf27e" layoutX="170.0" layoutY="208.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="RIGHT" wrappingWidth="255.99996948242188">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+            <Text fx:id="s5" fill="#cdf27e" layoutX="170.0" layoutY="256.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="STATISTICS" textAlignment="RIGHT" wrappingWidth="255.99996948242188">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="term" layoutX="265.0" layoutY="630.0" prefHeight="362.0" prefWidth="879.0" visible="false">
+         <children>
+            <TextArea fx:id="terminalText" editable="false" layoutX="6.0" layoutY="30.0" prefHeight="324.0" prefWidth="867.0">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </TextArea>
+         </children>
+      </AnchorPane>
+      <Text fx:id="homeTextDefault" fill="WHITE" layoutX="1087.0" layoutY="173.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="H O M E" textAlignment="CENTER" wrappingWidth="199.6666259765625">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Text>
+      <Rectangle fx:id="homeRectDefault" arcHeight="15.0" arcWidth="15.0" fill="#1f93ff00" height="76.0" layoutX="1087.0" layoutY="127.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="200.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Rectangle>
+      <Rectangle fx:id="homeRectHover" arcHeight="15.0" arcWidth="15.0" fill="WHITE" height="76.0" layoutX="1087.0" layoutY="127.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" visible="false" width="200.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Rectangle>
+      <Text fx:id="homeTextHover" fill="#000025" layoutX="1087.0" layoutY="173.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="H O M E" textAlignment="CENTER" visible="false" wrappingWidth="199.66668701171875">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="homeButton" graphicTextGap="7.0" layoutX="1087.0" layoutY="127.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#returnToMain" onMouseEntered="#homeButtonHover" onMouseExited="#homeButtonDefault" opacity="0.0" prefHeight="76.0" prefWidth="200.0" text="home">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <AnchorPane fx:id="running" layoutX="123.0" layoutY="312.0" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="1.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Solution">
+               <font>
+                  <Font name="Agency FB Bold" size="48.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="in progress.">
+               <font>
+                  <Font name="Agency FB Bold" size="48.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="complete" layoutX="122.0" layoutY="316.0">
+         <children>
+            <Text fx:id="runningText" fill="#cdf27e" layoutX="178.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="44 s" wrappingWidth="302.55731201171875">
+               <font>
+                  <Font name="Agency FB Bold" size="48.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Solution complete.">
+               <font>
+                  <Font name="Agency FB Bold" size="48.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="It took ">
+               <font>
+                  <Font name="Agency FB Bold" size="48.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

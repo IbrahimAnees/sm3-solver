@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" stylesheets="@css/styling.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="visualisation.ParametersController">
+   <children>
+      <ImageView fitHeight="93.0" fitWidth="220.0" layoutX="120.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo.png" />
+         </image>
+      </ImageView>
+      <Text fill="#cdf27e" layoutX="120.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Optimum solver">
+         <font>
+            <Font name="Agency FB Bold" size="48.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="500.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="for job">
+         <font>
+            <Font name="Agency FB Bold" size="48.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="120.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="scheduling problems.">
+         <font>
+            <Font name="Agency FB Bold" size="48.0" />
+         </font>
+      </Text>
+      <ImageView blendMode="SRC_ATOP" fitHeight="744.0" fitWidth="814.0" layoutX="920.0" layoutY="-203.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/algo.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="120.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="File selected">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="120.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Output name">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="120.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Number of processors">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="120.0" layoutY="701.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Parallelization">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="coresTitle" fill="WHITE" layoutX="120.0" layoutY="764.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppins" text="Number of cores">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="inputText" fill="WHITE" layoutX="476.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="fafasdfasdfasdffadfasdfasdf" wrappingWidth="205.0">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font></Text>
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#1f93ff00" height="39.0" layoutX="463.0" layoutY="551.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="250.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Rectangle>
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#1f93ff00" height="39.0" layoutX="463.0" layoutY="616.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="250.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Rectangle>
+      <Rectangle fx:id="coreBorder" arcHeight="15.0" arcWidth="15.0" fill="#1f93ff00" height="39.0" layoutX="463.0" layoutY="735.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" visible="false" width="250.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Rectangle>
+      <TextField fx:id="outputText" layoutX="476.0" layoutY="555.0" prefHeight="24.0" prefWidth="232.0" style="-fx-background-color: null;" text="fasd">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="poppinsRegular" />
+            <String fx:value="text-area" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="processorsText" layoutX="476.0" layoutY="620.0" prefHeight="24.0" prefWidth="233.0" style="-fx-background-color: null;" text="2">
+         <styleClass>
+            <String fx:value="poppinsRegular" />
+            <String fx:value="text-area" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="coresText" layoutX="476.0" layoutY="740.0" prefHeight="24.0" prefWidth="230.0" style="-fx-background-color: null;">
+         <styleClass>
+            <String fx:value="text-area" />
+            <String fx:value="poppinsRegular" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <CheckBox fx:id="pCheckbox" layoutX="466.0" layoutY="679.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCheckParallelization" />
+      <Text fx:id="startTextDefault" fill="WHITE" layoutX="120.0" layoutY="866.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="S T A R T   S O L U T I O N" textAlignment="CENTER" wrappingWidth="593.0">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Text>
+      <Rectangle fx:id="startRectDefault" arcHeight="15.0" arcWidth="15.0" fill="#1f93ff00" height="76.0" layoutX="120.0" layoutY="820.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="593.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Rectangle>
+      <Rectangle fx:id="startRectHover" arcHeight="15.0" arcWidth="15.0" fill="WHITE" height="76.0" layoutX="120.0" layoutY="820.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" visible="false" width="593.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </Rectangle>
+      <Text fx:id="startTextHover" fill="#000025" layoutX="120.0" layoutY="866.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="poppinsRegular" text="S T A R T   S O L U T I O N" textAlignment="CENTER" visible="false" wrappingWidth="593.0">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="startButton" graphicTextGap="7.0" layoutX="120.0" layoutY="820.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#switchToVisualisation" onMouseEntered="#startButtonHover" onMouseExited="#startButtonDefault" opacity="0.0" prefHeight="76.0" prefWidth="593.0" text="start">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="685.0" layoutY="494.0" onMouseClicked="#returnToMain" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/bin.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+   <styleClass>
+      <String fx:value="backgroundColor" />
+      <String fx:value="poppinsRegular" />
+   </styleClass>
+</AnchorPane>

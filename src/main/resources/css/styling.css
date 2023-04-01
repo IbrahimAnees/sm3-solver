@@ -1,0 +1,94 @@
+.backgroundColor{
+    -fx-background-color: linear-gradient(to left top, #120f01, #0c0f03, #060e05, #020d07, #000b09, #000b0b, #000c0c, #000c0e, #000f11, #001114, #011317, #01151a);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-SemiBold.ttf')
+}
+
+.poppins {
+    -fx-font-family: "Poppins";
+}
+
+@font-face {
+    font-family: 'PoppinsRegular';
+    src: url('fonts/Poppins-Regular.ttf')
+}
+
+.poppinsRegular {
+    -fx-font-family: "PoppinsRegular";
+}
+
+.styleVisualisation {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    font-style: normal;
+    /* identical to box height */
+    letter-spacing: 0.1em;
+}
+
+.text-area .content {
+    -fx-background-color: black;
+}
+
+.stopBtn {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+}
+
+.text-area   {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-family: monospace;
+}
+
+.check-box .box {
+    -fx-background-color: grey;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: black;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #CDF27E;
+}
+
+.check-box > .box > .mark {
+    -fx-padding: 10px;
+}
+
+.status-red {
+    -fx-background-color:rgba(128,0,0,0.7);
+}
+.status-green {
+    -fx-background-color:rgba(0,128,0,0.7);
+}
+.status-blue {
+    -fx-background-color:rgba(0,0,128,0.7);
+}
+.status-pink {
+    -fx-background-color:rgba(205, 144, 144, 1);
+}
+
+.scroll-bar {
+    -fx-background-color: #CDF27E;
+}
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    -fx-background-color: #2f2d2e;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #CDF27E;
+}
+
+.chart-title {
+    -fx-text-fill: white;
+}
