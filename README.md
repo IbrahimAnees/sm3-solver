@@ -4,7 +4,7 @@ Algorithmic solution to a job-scheduling problem.
 
 ## Environment
 
-The `scheduler.jar` file located in the project root
+The `scheduler.jar` file can be found under Releases
 
 ## Arguments/Inputs
 
