@@ -1,6 +1,6 @@
-# Scheduling McQueen Task Scheduling Program
+# Scheduling McQueen 3 (SM3) Task Scheduling Program
 
-This repository consists represents the task scheduling program for SOFTENG 306 Project 2, done by team 3.
+Algorithmic solution to a job-scheduling problem.
 
 ## Environment
 
@@ -38,7 +38,3 @@ An optimal schedule in which the tasks in the digraph can be scheduled accorddin
 | Matthew Lai   | mlai962 | [mlai962](https://github.com/mlai962)                                                   |
 | Bill Wong     | bwon783 | [bwon783](https://github.com/bwon783)                                                   |
 | Kevin Wang    | kwan772 | [kwan772](https://github.com/kwan772)                                                   |
-
-## Wiki
-
-The project wiki contains information on meeting minutes and decisions that the team made during the project. They can be view [here](https://github.com/se306-2022/project-2-project-2-team-3/wiki).
